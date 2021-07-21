@@ -4,7 +4,7 @@
 " Download plug.vim and put it in ~/.vim/autoload
 "
 "   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"     https://raw.githubusercontent.com/b4skyx/vim-plug/master/plug.vim
 "
 " Edit your .vimrc
 "
@@ -12,11 +12,11 @@
 "
 "   " Make sure you use single quotes
 "
-"   " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-"   Plug 'junegunn/vim-easy-align'
+"   " Shorthand notation; fetches https://github.com/b4skyx/vim-easy-align
+"   Plug 'b4skyx/vim-easy-align'
 "
 "   " Any valid git URL is allowed
-"   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"   Plug 'https://github.com/b4skyx/vim-github-dashboard.git'
 "
 "   " Multiple Plug commands can be written in a single line using | separators
 "   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -35,7 +35,7 @@
 "   Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 "
 "   " Plugin outside ~/.vim/plugged with post-update hook
-"   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"   Plug 'b4skyx/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "
 "   " Unmanaged plugin (manually installed and updated)
 "   Plug '~/my-prototype-plugin'
@@ -58,10 +58,10 @@
 "| `for`                   | On-demand loading: File types                    |
 "| `frozen`                | Do not update unless explicitly specified        |
 "
-" More information: https://github.com/junegunn/vim-plug
+" More information: https://github.com/b4skyx/vim-plug
 "
 "
-" Copyright (c) 2017 Junegunn Choi
+" Copyright (c) 2017 b4skyx Choi
 "
 " MIT License
 "
@@ -92,7 +92,7 @@ let g:loaded_plug = 1
 let s:cpo_save = &cpo
 set cpo&vim
 
-let s:plug_src = 'https://github.com/junegunn/vim-plug.git'
+let s:plug_src = 'https://github.com/b4skyx/vim-plug.git'
 let s:plug_tab = get(s:, 'plug_tab', -1)
 let s:plug_buf = get(s:, 'plug_buf', -1)
 let s:mac_gui = has('gui_macvim') && has('gui_running')
@@ -2266,10 +2266,10 @@ endfunction
 
 function! s:compare_git_uri(a, b)
   " See `git help clone'
-  " https:// [user@] github.com[:port] / junegunn/vim-plug [.git]
-  "          [git@]  github.com[:port] : junegunn/vim-plug [.git]
-  " file://                            / junegunn/vim-plug        [/]
-  "                                    / junegunn/vim-plug        [/]
+  " https:// [user@] github.com[:port] / b4skyx/vim-plug [.git]
+  "          [git@]  github.com[:port] : b4skyx/vim-plug [.git]
+  " file://                            / b4skyx/vim-plug        [/]
+  "                                    / b4skyx/vim-plug        [/]
   let pat = '^\%(\w\+://\)\='.'\%([^@/]*@\)\='.'\([^:/]*\%(:[0-9]*\)\=\)'.'[:/]'.'\(.\{-}\)'.'\%(\.git\)\=/\?$'
   let ma = matchlist(a:a, pat)
   let mb = matchlist(a:b, pat)
